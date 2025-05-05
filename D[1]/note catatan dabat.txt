@@ -1,0 +1,39 @@
+-- order by
+-- ==> asc (ascending) = urutin dari bawah keatas
+-- ==> desc (descending) = dari atas ke bawah
+
+join:
+-inner join / join
+-left join
+-right join
+-outer join
+
+
+union: penggabungan hasil dua query
+
+
+
+
+
+
+-- select * from mscustomer order by customerID desc;
+-- select * from mscustomer order by customerID asc;
+
+-- SELECT * from mscustomer a 
+-- join transactionheader b on a.CustomerID = b.CustomerID
+-- join msemployee c on b.EmployeeID = c.EmployeeID
+-- join transactiondetail d on b.TransactionID = d.TransactionID
+
+-- SELECT * from mscustomer where customerName like 'Dirk Titterell' union SELECT * from mscustomer where customerName like '%Alex%'
+
+1. select * from mscustomer order by CustomerDOB desc;
+
+2. select a.ProductName, b.CategoryName, concat('$', a.ProductPrice) as ProductPrice from msproduct a
+join mscategory b on a.CategoryID = b.CategoryID where CategoryName like 'Dairy'
+
+3. select distinct CustomerName, CustomerAddress from mscustomer a
+join transactionheader b on a.CustomerID = b.CustomerID
+join msemployee c on b.EmployeeID = c.EmployeeID
+where c.EmployeeID like 'EM002' and quarter(b.TransactionDate);
+
+4. 
